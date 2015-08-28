@@ -122,7 +122,7 @@ module T
       when 'auto'
         say("   @#{from_user}", [:bold, :yellow])
         if id
-          say("   (#{id})", [:yellow])
+          say("   (#{id})", [:green])
         end
         print_wrapped(HTMLEntities.new.decode(message), indent: 3)
         say
