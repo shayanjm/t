@@ -111,7 +111,7 @@ module T
       STDOUT.flush
     end
 
-    def print_message(from_user, message, id=nil)
+    def print_message(from_user, message, id=nil, created_at=nil)
       require 'htmlentities'
 
       case options['color']
@@ -120,9 +120,14 @@ module T
         say
         say
       when 'auto'
-        say("   @#{from_user}", [:bold, :yellow])
+        if created_at
+          say("   @#{from_user}  :: " + created_at, [:bold, :yellow])
+        end
+        if created_at == nil
+          say("  @#{from_user}", [:bold, :yellow])
+        end
         if id
-          say("   (#{id})", [:green])
+          say("   (id: #{id})", [:green])
         end
         print_wrapped(HTMLEntities.new.decode(message), indent: 3)
         say
