@@ -153,7 +153,7 @@ module T
           end
           print_table([array], truncate: STDOUT.tty?)
         else
-          print_message(tweet.user.screen_name, tweet.text, tweet.id, tweet.created_at.timelocal.strftime('%I:%M:%S'))
+          print_message(tweet.user.screen_name, tweet.text, tweet.id, tweet.created_at.localtime.strftime('%I:%M:%S'))
         end
       end
     end
