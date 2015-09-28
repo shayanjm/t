@@ -185,7 +185,7 @@ module T
         print_table_with_headings(array, TWEET_HEADINGS, format)
       else
         tweets.each do |tweet|
-          print_message(tweet.user.screen_name, decode_uris(tweet.full_text, options['decode_uris'] ? tweet.uris : nil))
+          print_message(tweet.user.screen_name, decode_uris(tweet.full_text, options['decode_uris'] ? tweet.uris : nil), tweet.id)
         end
       end
     end

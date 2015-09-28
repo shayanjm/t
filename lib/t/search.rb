@@ -51,7 +51,7 @@ module T
       else
         say unless tweets.empty?
         tweets.each do |tweet|
-          print_message(tweet.user.screen_name, decode_full_text(tweet, options['decode_uris']))
+          print_message(tweet.user.screen_name, decode_full_text(tweet, options['decode_uris']), tweet.id)
         end
       end
     end
